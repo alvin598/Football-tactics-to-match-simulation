@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="footballtactics" nsURI="http://www.example.org/footballtactics"
-    nsPrefix="footballtactics"/>
+    name="footballtactics" nsURI="http://lnu.se/4dt903/football" nsPrefix="footballtactics"/>
