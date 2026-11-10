@@ -8,6 +8,6 @@
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>footballtactics.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Footballtactics" basePackage="football-tactics-to-match-simulation"
+  <genPackages prefix="Footballtactics" basePackage="se.lnu.football"
       disposableProviderFactory="true" ecorePackage="footballtactics.ecore#/"/>
 </genmodel:GenModel>
