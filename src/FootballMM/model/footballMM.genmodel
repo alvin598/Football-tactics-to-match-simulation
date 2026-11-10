@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/FootballMM/src-gen" creationIcons="false" editDirectory="/FootballMM.edit/src-gen"
+    editorDirectory="/FootballMM.editor/src-gen" modelPluginID="FootballMM" modelName="FootballMM"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="25.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>footballMM.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="FootballMM" basePackage="se.lnu.football" disposableProviderFactory="true"
+      ecorePackage="footballMM.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Position">
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/test"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Formation"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//PassingStyle"/>
+    <genClasses ecoreClass="footballMM.ecore#//Team">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Team/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference footballMM.ecore#//Team/player"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference footballMM.ecore#//Team/tactics"/>
+    </genClasses>
+    <genClasses ecoreClass="footballMM.ecore#//Player">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/passing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/shooting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/defending"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/speed"/>
+    </genClasses>
+    <genClasses ecoreClass="footballMM.ecore#//Tactics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/formation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/passingStyle"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
