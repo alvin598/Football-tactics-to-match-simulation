@@ -35,9 +35,9 @@
     <eLiterals name="Attacker" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Formation">
-    <eLiterals name="442"/>
-    <eLiterals name="433" value="1"/>
-    <eLiterals name="352" value="2"/>
+    <eLiterals name="F442"/>
+    <eLiterals name="F433" value="1"/>
+    <eLiterals name="F352" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PassingStyle">
     <eLiterals name="Longballs"/>
