@@ -17,13 +17,13 @@
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Attacker"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Formation">
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/4-4-2"/>
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/4-3-3"/>
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/3-5-2"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/442"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/433"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/352"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//PassingStyle">
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Longballs"/>
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/One%20touch"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/One_touch"/>
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Target%20man"/>
     </genEnums>
     <genClasses ecoreClass="footballMM.ecore#//Team">

@@ -5,7 +5,7 @@
     <semanticResources>footballMM.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tyx_sNzuEfGk4LK2qllW5Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1794396152196">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1794399643684">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="footballMM.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -321,7 +321,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_0RdI8N0SEfGC1-a6hiTDag" name="formation : Formation = 4-4-2" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_0RdI8N0SEfGC1-a6hiTDag" name="formation : Formation = 442" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="footballMM.ecore#//Tactics/formation"/>
         <semanticElements xmi:type="ecore:EAttribute" href="footballMM.ecore#//Tactics/formation"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="__pzhRd0SEfGC1-a6hiTDag" labelAlignment="LEFT" description="_--aFxd0QEfGC1-a6hiTDag">
@@ -415,25 +415,25 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_YI5vUN3BEfGC1-a6hiTDag" name="4-4-2" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/4-4-2"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/4-4-2"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_YI5vUN3BEfGC1-a6hiTDag" name="442" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/442"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/442"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_YI6WYN3BEfGC1-a6hiTDag" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_a4EEQN3BEfGC1-a6hiTDag" name="4-3-3" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/4-3-3"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/4-3-3"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_a4EEQN3BEfGC1-a6hiTDag" name="433" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/433"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/433"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_a4ErUN3BEfGC1-a6hiTDag" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_eR-mYN3BEfGC1-a6hiTDag" name="3-5-2" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/3-5-2"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/3-5-2"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_eR-mYN3BEfGC1-a6hiTDag" name="352" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/352"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//Formation/352"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_eR-mYd3BEfGC1-a6hiTDag" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
@@ -455,9 +455,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_iNvRUN3BEfGC1-a6hiTDag" name="One touch" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/One%20touch"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/One%20touch"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_iNvRUN3BEfGC1-a6hiTDag" name="One_touch" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/One_touch"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/One_touch"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_iNv4YN3BEfGC1-a6hiTDag" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

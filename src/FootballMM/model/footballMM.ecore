@@ -35,14 +35,14 @@
     <eLiterals name="Attacker" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Formation">
-    <eLiterals name="4-4-2"/>
-    <eLiterals name="4-3-3" value="1"/>
-    <eLiterals name="3-5-2" value="2"/>
+    <eLiterals name="442"/>
+    <eLiterals name="433" value="1"/>
+    <eLiterals name="352" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PassingStyle">
     <eLiterals name="Longballs"/>
-    <eLiterals name="One touch" value="1"/>
-    <eLiterals name="Target man" value="2"/>
+    <eLiterals name="One_touch" value="1" literal="One_Touch"/>
+    <eLiterals name="Target man" value="2" literal="Target_Man"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Match">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
