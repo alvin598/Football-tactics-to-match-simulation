@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="footballMM" nsURI="http://lnu.se/4dt903/football" nsPrefix="footballMM">
   <eClassifiers xsi:type="ecore:EClass" name="Team">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="11"
         upperBound="11" eType="#//Player" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tactics" lowerBound="1"
@@ -24,13 +24,30 @@
   <eClassifiers xsi:type="ecore:EClass" name="Tactics">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="formation" lowerBound="1"
         eType="#//Formation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="passingStyle" lowerBound="1"
         eType="#//PassingStyle"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Position">
-    <eLiterals name="test"/>
+    <eLiterals name="GoalKeeper"/>
+    <eLiterals name="Defender" value="1"/>
+    <eLiterals name="Midfielder" value="2"/>
+    <eLiterals name="Attacker" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Formation"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="PassingStyle"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Formation">
+    <eLiterals name="4-4-2"/>
+    <eLiterals name="4-3-3" value="1"/>
+    <eLiterals name="3-5-2" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PassingStyle">
+    <eLiterals name="Longballs"/>
+    <eLiterals name="One touch" value="1"/>
+    <eLiterals name="Target man" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Match">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="team" lowerBound="2" upperBound="2"
+        eType="#//Team"/>
+  </eClassifiers>
 </ecore:EPackage>

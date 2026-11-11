@@ -11,12 +11,23 @@
   <genPackages prefix="FootballMM" basePackage="se.lnu.football" disposableProviderFactory="true"
       ecorePackage="footballMM.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Position">
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/test"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/GoalKeeper"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Defender"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Midfielder"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Attacker"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Formation"/>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//PassingStyle"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Formation">
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/4-4-2"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/4-3-3"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Formation/3-5-2"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//PassingStyle">
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Longballs"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/One%20touch"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Target%20man"/>
+    </genEnums>
     <genClasses ecoreClass="footballMM.ecore#//Team">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Team/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Team/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference footballMM.ecore#//Team/player"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference footballMM.ecore#//Team/tactics"/>
     </genClasses>
@@ -32,6 +43,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/formation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/depth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/passingStyle"/>
+    </genClasses>
+    <genClasses ecoreClass="footballMM.ecore#//Match">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Match/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference footballMM.ecore#//Match/team"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
