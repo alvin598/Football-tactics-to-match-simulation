@@ -5,7 +5,7 @@
     <semanticResources>footballMM.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tyx_sNzuEfGk4LK2qllW5Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1794400901431">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1794486736665">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="footballMM.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -49,10 +49,6 @@
             <children xmi:type="notation:Node" xmi:id="_0bH3wN0REfGC1-a6hiTDag" type="3010" element="_0a_U4N0REfGC1-a6hiTDag">
               <styles xmi:type="notation:FontStyle" xmi:id="_0bH3wd0REfGC1-a6hiTDag" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_0bH3wt0REfGC1-a6hiTDag"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_G2_9MN0SEfGC1-a6hiTDag" type="3010" element="_G23aUN0SEfGC1-a6hiTDag">
-              <styles xmi:type="notation:FontStyle" xmi:id="_G2_9Md0SEfGC1-a6hiTDag" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_G2_9Mt0SEfGC1-a6hiTDag"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_xWF18t0QEfGC1-a6hiTDag"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_xWF1890QEfGC1-a6hiTDag"/>
@@ -301,14 +297,6 @@
         <target xmi:type="ecore:EAttribute" href="footballMM.ecore#//Player/defending"/>
         <semanticElements xmi:type="ecore:EAttribute" href="footballMM.ecore#//Player/defending"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_DQBPcd0SEfGC1-a6hiTDag" labelAlignment="LEFT" description="_--aFxd0QEfGC1-a6hiTDag">
-          <labelFormat>bold</labelFormat>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_G23aUN0SEfGC1-a6hiTDag" name="speed : EInt" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="footballMM.ecore#//Player/speed"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="footballMM.ecore#//Player/speed"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_JxjCxd0SEfGC1-a6hiTDag" labelAlignment="LEFT" description="_--aFxd0QEfGC1-a6hiTDag">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

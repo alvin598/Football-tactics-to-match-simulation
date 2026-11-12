@@ -37,7 +37,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/passing"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/shooting"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/defending"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/speed"/>
     </genClasses>
     <genClasses ecoreClass="footballMM.ecore#//Tactics">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/formation"/>
