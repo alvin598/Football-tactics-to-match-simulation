@@ -5,5 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="25.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>simulationMM.ecore</foreignModel>
-  <genPackages prefix="SimulationMM" disposableProviderFactory="true" ecorePackage="simulationMM.ecore#/"/>
+  <genPackages prefix="SimulationMM" disposableProviderFactory="true" ecorePackage="simulationMM.ecore#/">
+    <genClasses ecoreClass="simulationMM.ecore#//NewEClass1"/>
+  </genPackages>
 </genmodel:GenModel>

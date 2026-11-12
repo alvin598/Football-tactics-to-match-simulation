@@ -1,3 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name="simulationMM" nsURI="http://lnu.se/4dt903/simulation" nsPrefix="simulationMM"/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simulationMM" nsURI="http://lnu.se/4dt903/simulation" nsPrefix="simulationMM">
+  <eClassifiers xsi:type="ecore:EClass" name="Simulation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ZoneType">
+    <eLiterals name="DEFENCE"/>
+    <eLiterals name="MIDFIELD" value="1"/>
+    <eLiterals name="ATTACK" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RuleType">
+    <eLiterals name="POSSESSION"/>
+    <eLiterals name="PASSING" value="1"/>
+    <eLiterals name="SHOOTING" value="2"/>
+    <eLiterals name="MOVEMENT" value="3"/>
+    <eLiterals name="BALL_RECOVERY" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RuleType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Zone">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ZoneType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimTeam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Agent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="passing" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defending" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slot" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>
