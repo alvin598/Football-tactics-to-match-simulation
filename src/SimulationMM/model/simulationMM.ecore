@@ -10,22 +10,15 @@
     <eLiterals name="MIDFIELD" value="1"/>
     <eLiterals name="ATTACK" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="RuleType">
-    <eLiterals name="POSSESSION"/>
-    <eLiterals name="PASSING" value="1"/>
-    <eLiterals name="SHOOTING" value="2"/>
-    <eLiterals name="MOVEMENT" value="3"/>
-    <eLiterals name="BALL_RECOVERY" value="4"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RuleType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probability" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Zone">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ZoneType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ZoneType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimTeam">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
