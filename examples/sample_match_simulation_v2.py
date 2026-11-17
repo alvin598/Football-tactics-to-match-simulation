@@ -346,6 +346,12 @@ def run_many(make_simulation, n):
           f"Home possession: {totals['home_poss'] / totals['ticks']:.1%}")
     print("Most common scores:",
           ", ".join(f"{h}-{a} ({c / n:.1%})" for (h, a), c in scores.most_common(5)))
+    most_goals = max(sum(score) for score in scores)
+    highest_scoring = [f"{h}-{a}" for (h, a) in scores if h + a == most_goals]
+    biggest_margin = max(abs(h - a) for h, a in scores)
+    widest_wins = [f"{h}-{a}" for (h, a) in scores if abs(h - a) == biggest_margin]
+    print(f"Most goals in a match: {most_goals} ({', '.join(highest_scoring)})")
+    print(f"Biggest winning margin: {biggest_margin} goals ({', '.join(widest_wins)})")
 
 
 # =============================================================================
@@ -466,5 +472,6 @@ if __name__ == "__main__":
           f"{f'{a.passes} ({a.passes_completed})':>12}")
     print(f"{'Recoveries':<20}{h.recoveries:>12}{a.recoveries:>12}")
     print(f"{'Shots':<20}{h.shots:>12}{a.shots:>12}")
+    print(f"{'Total events':<20}{len(single.events):>24}")
 
     run_many(make_simulation, 1000)
