@@ -26,9 +26,12 @@ Modifier tables - used by the M2M step to compute the numbers in SimTeam:
       High                +5             -5              +3
 
     Passing style    Pass success   Progression bonus
-      One_Touch           -5              +0
-      Longballs          -10              +1
+      One_Touch            0              +0
+      Longballs          -10              +2
       Target_Man          +5              +1   (only passes to the target player)
+
+    Home advantage: +2 to the home team's P(pass), P(goal) and P(recovery)
+    Shooting opportunity when progression reaches 6
 
     Zone transitions after a successful pass (rest = stay in the same zone)
       DEFENCE  -> MIDFIELD  40 %
@@ -85,7 +88,8 @@ MIRROR = {
     ZoneType.ATTACK: ZoneType.DEFENCE,
 }
 
-SHOT_THRESHOLD = 5  # progression needed for a shooting opportunity
+SHOT_THRESHOLD = 6  # progression needed for a shooting opportunity
+HOME_ADVANTAGE = 2  # added to the home team's P(pass), P(goal) and P(recovery)
 
 
 def clamp(p):
@@ -181,19 +185,21 @@ class SimTeam:
 
 # --- The three events from the document --------------------------------------
 
-def pass_probability(attacking, defending, rule):
+# home_bonus is HOME_ADVANTAGE for the team the event is for, if it plays at home, else 0
+
+def pass_probability(attacking, defending, rule, home_bonus):
     return clamp(50 + (attacking.passing - defending.recovery) / 2
-                 + rule.success_modifier + defending.opponent_pass_modifier)
+                 + rule.success_modifier + defending.opponent_pass_modifier + home_bonus)
 
 
-def recovery_probability(attacking, defending):
+def recovery_probability(attacking, defending, home_bonus):
     return clamp(50 + (defending.recovery - attacking.passing) / 2
-                 + defending.recovery_modifier)
+                 + defending.recovery_modifier + home_bonus)
 
 
-def goal_probability(attacking, defending):
+def goal_probability(attacking, defending, home_bonus):
     return clamp(50 + (attacking.shooting - defending.goalkeeping) / 2
-                 + attacking.goal_modifier + defending.opponent_goal_modifier)
+                 + attacking.goal_modifier + defending.opponent_goal_modifier + home_bonus)
 
 
 # --- Match statistics (rule 10) -----------------------------------------------
@@ -242,6 +248,9 @@ class Simulation:
     def happens(self, probability):
         return self.rng.random() * 100 < probability
 
+    def home_bonus(self, team):
+        return HOME_ADVANTAGE if team is self.home else 0
+
     def pick_transition(self, team, zone):
         """Returns the transition that happens, or None if the ball stays in the zone."""
         roll = self.rng.random() * 100
@@ -267,7 +276,8 @@ class Simulation:
             rule = attacking.pass_rule(zone)
             receiver = f" to target player #{attacking.target_player_id}" if rule.to_target else ""
             att_stats.passes += 1
-            if self.happens(pass_probability(attacking, defending, rule)):
+            if self.happens(pass_probability(attacking, defending, rule,
+                                             self.home_bonus(attacking))):
                 att_stats.passes_completed += 1
                 progression += self.zones[zone].progression + rule.progression_bonus
                 result.events.append(Event(minute, attacking.name, EventType.PASS, True,
@@ -278,7 +288,8 @@ class Simulation:
                     # ---- Event 3: shooting ----
                     shooter = attacking.pick_shooter(self.rng)
                     att_stats.shots += 1
-                    if self.happens(goal_probability(attacking, defending)):
+                    if self.happens(goal_probability(attacking, defending,
+                                                     self.home_bonus(attacking))):
                         att_stats.goals += 1
                         result.events.append(Event(minute, attacking.name, EventType.SHOT, True,
                                                    f"GOAL by player #{shooter.id}"))
@@ -302,7 +313,8 @@ class Simulation:
                 result.events.append(Event(minute, attacking.name, EventType.PASS, False,
                                            f"pass in {zone.name}{receiver} failed"))
                 # ---- Rule 4 + Event 2: failed pass -> recovery attempt ----
-                if self.happens(recovery_probability(attacking, defending)):
+                if self.happens(recovery_probability(attacking, defending,
+                                                     self.home_bonus(defending))):
                     def_stats.recoveries += 1
                     result.events.append(Event(minute, defending.name, EventType.RECOVERY, True,
                                                f"ball recovered in {MIRROR[zone].name}"))
@@ -359,7 +371,7 @@ def run_many(make_simulation, n):
 # =============================================================================
 
 MATCH_ID = 1
-TICKS = 90
+TICKS = 80
 
 ZONES = [
     Zone(ZoneType.DEFENCE,  progression=0),
@@ -392,10 +404,10 @@ HOME = SimTeam(
     opponent_pass_modifier=-5,   # depth High
     opponent_goal_modifier=3,    # depth High
     pass_rules=[
-        # One_Touch: -5 success, +0 progression
-        PassRule(ZoneType.DEFENCE,  success_modifier=-5, progression_bonus=0),
-        PassRule(ZoneType.MIDFIELD, success_modifier=-5, progression_bonus=0),
-        PassRule(ZoneType.ATTACK,   success_modifier=-5, progression_bonus=0),
+        # One_Touch: 0 success, +0 progression
+        PassRule(ZoneType.DEFENCE,  success_modifier=0, progression_bonus=0),
+        PassRule(ZoneType.MIDFIELD, success_modifier=0, progression_bonus=0),
+        PassRule(ZoneType.ATTACK,   success_modifier=0, progression_bonus=0),
     ],
     transitions=[
         ZoneTransition(ZoneType.DEFENCE,  ZoneType.MIDFIELD, chance=40),
@@ -430,10 +442,10 @@ AWAY = SimTeam(
     opponent_pass_modifier=5,    # depth Low
     opponent_goal_modifier=-3,   # depth Low
     pass_rules=[
-        # Longballs: -10 success, +1 progression on every successful pass
-        PassRule(ZoneType.DEFENCE,  success_modifier=-10, progression_bonus=1),
-        PassRule(ZoneType.MIDFIELD, success_modifier=-10, progression_bonus=1),
-        PassRule(ZoneType.ATTACK,   success_modifier=-10, progression_bonus=1),
+        # Longballs: -10 success, +2 progression on every successful pass
+        PassRule(ZoneType.DEFENCE,  success_modifier=-10, progression_bonus=2),
+        PassRule(ZoneType.MIDFIELD, success_modifier=-10, progression_bonus=2),
+        PassRule(ZoneType.ATTACK,   success_modifier=-10, progression_bonus=2),
     ],
     transitions=[
         ZoneTransition(ZoneType.DEFENCE,  ZoneType.MIDFIELD, chance=40),
