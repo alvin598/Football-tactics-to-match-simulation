@@ -42,16 +42,16 @@ class PassingStyle(Enum):
 
 
 # =============================================================================
-# RULES - the tables from rule-definitions.md
+# RULES - from rule-definitions.md
 # =============================================================================
 
-SHOT_THRESHOLD = 6   # progression needed for a shooting opportunity
-HOME_ADVANTAGE = 2   # +2 % to passes, shots and ball recovery for the home team
+SHOT_THRESHOLD = 6 # progression needed for a shooting opportunity
+HOME_ADVANTAGE = 2 # +2 % to passes, shots and ball recovery for the home team
 
 ZONE_PROGRESSION = {Zone.DEFENCE: 0, Zone.MIDFIELD: 1, Zone.ATTACK: 2}
 
 FORMATION_MODIFIERS = {
-    #                  attack = goal chance, midfield = advance to attack, defence = recovery
+    # attack = goal chance, midfield = advance to attack, defence = recovery
     Formation.F442: {"attack": 0, "midfield": 0,  "defence": 0},
     Formation.F433: {"attack": 3, "midfield": -3, "defence": 0},
     Formation.F352: {"attack": 0, "midfield": 3,  "defence": -3},
@@ -66,22 +66,22 @@ DEPTH_MODIFIERS = {
 STYLE_MODIFIERS = {
     PassingStyle.ONE_TOUCH:  {"pass": 0,   "progression": 0},
     PassingStyle.LONG_BALLS: {"pass": -10, "progression": 2},
-    PassingStyle.TARGET_MAN: {"pass": 5,   "progression": 1},  # only passes to the target player
+    PassingStyle.TARGET_MAN: {"pass": 5,   "progression": 1}, # only passes to the target player
 }
 
 NORMAL_PASS = {"pass": 0, "progression": 0}
 
-# After a recovery, my DEFENCE is the opponent's ATTACK and the other way round.
+# After a recovery, teamA DEFENCE is the opponent's ATTACK + other way round.
 MIRROR = {Zone.DEFENCE: Zone.ATTACK, Zone.MIDFIELD: Zone.MIDFIELD, Zone.ATTACK: Zone.DEFENCE}
 
 
 def clamp(p):
-    """All probabilities are limited to 1-99 %."""
+    # All probabilities are limited to 1-99 %
     return max(1, min(99, p))
 
 
 def style_for_pass(team, zone):
-    """Passing style modifiers for one pass. Target man only counts for passes to the target player."""
+    # Passing style modifiers for one pass. Target man only counts for passes to the target player
     if team.style == PassingStyle.TARGET_MAN and zone == Zone.DEFENCE:
         return NORMAL_PASS
     return STYLE_MODIFIERS[team.style]
@@ -107,7 +107,7 @@ class MatchSimulation:
     def __init__(self, home, away, ticks, seed=None):
         self.home = home
         self.away = away
-        self.ticks = ticks  # number of pass attempts in a match
+        self.ticks = ticks # number of pass attempts in a match
         self.rng = random.Random(seed)
 
     def home_bonus(self, team):
@@ -116,30 +116,30 @@ class MatchSimulation:
     def happens(self, probability):
         return self.rng.random() * 100 < clamp(probability)
 
-    # ---- Event 1: passing ----
+    # Event 1: passing
     def pass_chance(self, attacking, defending, style):
         return (50 + (attacking.passing - defending.recovery) / 2
                 + style["pass"]
                 + DEPTH_MODIFIERS[defending.depth]["opponent_pass"]
                 + self.home_bonus(attacking))
 
-    # ---- Event 2: ball recovery ----
+    # Event 2: ball recovery
     def recovery_chance(self, attacking, defending):
         return (50 + (defending.recovery - attacking.passing) / 2
                 + DEPTH_MODIFIERS[defending.depth]["own_recovery"]
                 + FORMATION_MODIFIERS[defending.formation]["defence"]
                 + self.home_bonus(defending))
 
-    # ---- Event 3: shooting ----
+    # Event 3: shooting
     def goal_chance(self, attacking, defending):
         return (50 + (attacking.shooting - defending.goalkeeping) / 2
                 + FORMATION_MODIFIERS[attacking.formation]["attack"]
                 + DEPTH_MODIFIERS[defending.depth]["opponent_goal"]
                 + self.home_bonus(attacking))
 
-    # ---- Zone transition after a successful pass ----
+    # Zone transition after a successful pass
     def move_ball(self, team, zone, progression):
-        """Returns the new (zone, progression)."""
+        # Returns the new (zone, progression)
         roll = self.rng.random() * 100
 
         if zone == Zone.DEFENCE:
@@ -151,7 +151,7 @@ class MatchSimulation:
             if roll < to_attack:
                 return Zone.ATTACK, progression
             if roll < to_attack + 15:
-                return Zone.DEFENCE, 0                     # backwards: reset progression
+                return Zone.DEFENCE, 0 # backwards: reset progression
 
         elif zone == Zone.ATTACK:
             if roll < 25:
@@ -162,12 +162,11 @@ class MatchSimulation:
     def run(self):
         stats = {}
         for team in (self.home, self.away):
-            stats[team] = {"passes": 0, "completed": 0, "recoveries": 0,
-                           "shots": 0, "goals": 0, "possession": 0}
-        events = []  # (minute, kind, text)
+            stats[team] = {"passes": 0, "completed": 0, "recoveries": 0, "shots": 0, "goals": 0, "possession": 0}
+        events = []  # (minute, kind of event, text)
 
         attacking, defending = self.home, self.away
-        zone = Zone.MIDFIELD  # kick-off
+        zone = Zone.MIDFIELD # kick-off
         progression = 0
 
         for tick in range(self.ticks):
@@ -211,8 +210,10 @@ class MatchSimulation:
 
 
 def run_many(home, away, ticks, n):
-    """Play the same match n times and print a summary."""
-    home_wins = draws = away_wins = 0
+    # Play the same match n times and print a summary
+    home_wins = 0
+    draws = 0
+    away_wins = 0
     goals = shots = 0
     scores = Counter()
 
