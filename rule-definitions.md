@@ -13,7 +13,7 @@
 4. Failed passes trigger recovery attempts
 5. Passing style affects passing and attacking progression
 6. Defensive depth affects opponent shooting
-7. Pressing affects passing and recovery
+7. Depth/pressing affects passing and recovery
 8. Goalkeeper defending affects goal probability
 9. Successful passes can create shooting opportunities
 10. Match statistics are updated after every event
@@ -29,7 +29,7 @@ Players have four attributes:
 3. **Shooting**
 4. **Defending / GoalkeeperDefending**
 
-Each attribute has an individual ability rating of **1–99** (base success % before event computations).
+Each attribute has an individual ability rating of **1–99** (base individual success % before event/averages computations).
 
 ### Team stats
 
@@ -52,9 +52,9 @@ Team tactics have three attributes:
 
 | Passing style | Success | Attacking progression |
 |---|---|---|
-| One-touch | Higher | Less |
+| One-touch | Normal | Normal |
 | Long balls | Lower | More |
-| Target man | Medium | More (only to target player) |
+| Target man | Medium | Slightly more (only to target player) |
 
 ---
 
@@ -93,7 +93,7 @@ P(goal) = 50 + (Shooting_A − GoalkeeperDefending_B) / 2 + Modifiers
 - Midfield
 - Attack
 
-### Zone transition chance (after each pass)
+### Zone transition chance (after each successful pass)
 
 | From | To | Chance |
 |---|---|---|
@@ -121,7 +121,7 @@ Passing backwards between zones lowers progression:
 | Midfield → Defence | Reset progression |
 | Attack → Midfield | −2 |
 
-- A **shooting opportunity** is created when progression reaches **5**.
+- A **shooting opportunity** is created when progression reaches **6**.
 - Progression is **reset** after a shot is taken or if possession is lost.
 
 ### Bonus progression by pass type
@@ -130,7 +130,7 @@ Passing backwards between zones lowers progression:
 |---|---|
 | Successful normal pass | +0 |
 | Successful one-touch pass | +0 |
-| Successful long ball | +1 |
+| Successful long ball | +2 |
 | Successful pass to target man | +1 |
 
 ---
@@ -146,10 +146,12 @@ Passing backwards between zones lowers progression:
 | 3-5-2 | 0% | +3% | −3% |
 
 - **Attack %** affects goal chance
-- **Midfield %** affects chance to advance
-- **Defence %** affects defence chance
+- **Midfield %** affects chance to advance to the attack zone
+- **Defence %** affects defence / ball recovery chance
 
 ### Depth / Pressing
+
+Modifier to opponent's shooting probability (and own recovery / opponent passing):
 
 | Depth | Own recovery | Opponent pass | Opponent goal |
 |---|---|---|---|
@@ -161,6 +163,12 @@ Passing backwards between zones lowers progression:
 
 | Style | Modifier |
 |---|---|
-| One-touch | −5% |
+| One-touch | 0% |
 | Long balls | −10% |
 | Target man | +5% (only for target player) |
+
+### Additional smaller modifiers
+
+| Modifier | Effect |
+|---|---|
+| Home advantage | +2% passes, shots, defending / ball recovery |
