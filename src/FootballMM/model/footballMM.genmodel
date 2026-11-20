@@ -45,7 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="footballMM.ecore#//Match">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Match/id"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference footballMM.ecore#//Match/team"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference footballMM.ecore#//Match/team"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

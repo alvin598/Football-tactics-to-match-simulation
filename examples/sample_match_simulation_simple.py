@@ -1,16 +1,3 @@
-"""
-Football match simulation - simple version, follows rule-definitions.md.
-
-Only the GENERATED PART at the bottom would come from the model (M2T).
-Everything above it is fixed template code.
-
-Not stated in the md, so this file assumes:
-  * Target man: passes from MIDFIELD and ATTACK go to the target player.
-  * Failed pass + failed recovery -> the attacking team keeps the ball.
-  * After a recovery the ball is in the mirrored zone (my DEFENCE = your ATTACK).
-  * After a shot the other team gets the ball (DEFENCE after a miss,
-    MIDFIELD kick-off after a goal).
-"""
 
 import random
 from collections import Counter

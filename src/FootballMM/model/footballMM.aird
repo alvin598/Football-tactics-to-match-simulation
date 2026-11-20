@@ -3,9 +3,10 @@
   <viewpoint:DAnalysis uid="_tlNdwNzuEfGk4LK2qllW5Q" selectedViews="_tyx_sNzuEfGk4LK2qllW5Q" version="15.4.1.202403191723">
     <semanticResources>footballMM.ecore</semanticResources>
     <semanticResources>footballMM.genmodel</semanticResources>
+    <semanticResources>Examplematch.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tyx_sNzuEfGk4LK2qllW5Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1794486736665">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1795099252617">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="footballMM.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -223,16 +224,6 @@
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </centerLabelStyleDescription>
           <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_rTV-ct0SEfGC1-a6hiTDag" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
-          </endLabelStyleDescription>
-        </computedStyleDescriptions>
-        <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_HGdsmd3CEfGC1-a6hiTDag" routingStyle="manhattan">
-          <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_HGdsmt3CEfGC1-a6hiTDag" showIcon="false" labelExpression="service:render">
-            <labelFormat>bold</labelFormat>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </centerLabelStyleDescription>
-          <endLabelStyleDescription xmi:type="style:EndLabelStyleDescription" xmi:id="_HGdsm93CEfGC1-a6hiTDag" labelSize="6" showIcon="false" labelExpression="service:eKeysLabel">
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
           </endLabelStyleDescription>
         </computedStyleDescriptions>
@@ -479,11 +470,11 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_GRWpid3CEfGC1-a6hiTDag" name="[2..2] team" sourceNode="_-Og0cN3BEfGC1-a6hiTDag" targetNode="_YWCR0N0QEfGC1-a6hiTDag">
       <target xmi:type="ecore:EReference" href="footballMM.ecore#//Match/team"/>
       <semanticElements xmi:type="ecore:EReference" href="footballMM.ecore#//Match/team"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_HGdsnN3CEfGC1-a6hiTDag" description="_HGdsmd3CEfGC1-a6hiTDag" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_HGdsnt3CEfGC1-a6hiTDag" showIcon="false">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_OGJNoOQnEfGGdYAT7yMrMw" description="_rTV-cN0SEfGC1-a6hiTDag" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_OGJNouQnEfGGdYAT7yMrMw" showIcon="false">
           <labelFormat>bold</labelFormat>
         </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_HGdsnd3CEfGC1-a6hiTDag" labelSize="6" showIcon="false" labelColor="39,76,114"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_OGJNoeQnEfGGdYAT7yMrMw" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
