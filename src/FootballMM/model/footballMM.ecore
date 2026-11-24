@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="footballMM" nsURI="http://lnu.se/4dt903/football" nsPrefix="footballMM">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Team">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="oneGoalkeeper"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="oneGoalkeeper" value="&#xA;&#x9;&#x9;&#x9;player->selectByKind(GoalKeeper)->size() = 1"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="11"
         upperBound="11" eType="#//Player" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tactics" lowerBound="1"
         eType="#//Tactics" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Player">
+  <eClassifiers xsi:type="ecore:EClass" name="Player" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="passingInRange"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="passingInRange" value="&#xA;&#x9;&#x9;&#x9;passing >= 1 and passing &lt;= 99"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
-        eType="#//Position"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="passing" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shooting" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defending" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tactics">
@@ -28,7 +42,6 @@
         eType="#//PassingStyle"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Position">
-    <eLiterals name="GoalKeeper"/>
     <eLiterals name="Defender" value="1"/>
     <eLiterals name="Midfielder" value="2"/>
     <eLiterals name="Attacker" value="3"/>
@@ -48,5 +61,29 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="team" lowerBound="2" upperBound="2"
         eType="#//Team" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutfieldPlayer" eSuperTypes="#//Player">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ratingsInRange"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ratingsInRange" value="&#xA;        &#x9;shooting >= 1 and shooting &lt;= 99 and defending >= 1 and defending &lt;= 99"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shooting" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defending" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="#//Position"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GoalKeeper" eSuperTypes="#//Player">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="goalkeepingInRange"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="goalkeepingInRange" value="&#xA;&#x9;&#x9;&#x9;goalkeeping >= 1 and goalkeeping &lt;= 99"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goalkeeping" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

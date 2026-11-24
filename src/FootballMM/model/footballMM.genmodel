@@ -11,7 +11,6 @@
   <genPackages prefix="FootballMM" basePackage="se.lnu.football" disposableProviderFactory="true"
       ecorePackage="footballMM.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//Position">
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/GoalKeeper"/>
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Defender"/>
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Midfielder"/>
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//Position/Attacker"/>
@@ -33,10 +32,7 @@
     </genClasses>
     <genClasses ecoreClass="footballMM.ecore#//Player">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/position"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/passing"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/shooting"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/defending"/>
     </genClasses>
     <genClasses ecoreClass="footballMM.ecore#//Tactics">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Tactics/formation"/>
@@ -46,6 +42,14 @@
     <genClasses ecoreClass="footballMM.ecore#//Match">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Match/id"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference footballMM.ecore#//Match/team"/>
+    </genClasses>
+    <genClasses ecoreClass="footballMM.ecore#//OutfieldPlayer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//OutfieldPlayer/shooting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//OutfieldPlayer/defending"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//OutfieldPlayer/position"/>
+    </genClasses>
+    <genClasses ecoreClass="footballMM.ecore#//GoalKeeper">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//GoalKeeper/goalkeeping"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
