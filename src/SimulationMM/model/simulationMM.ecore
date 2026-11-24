@@ -4,6 +4,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Simulation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchId" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ticks" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="team" lowerBound="2" upperBound="2"
+        eType="#//SimTeam" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ZoneType">
     <eLiterals name="DEFENCE"/>
@@ -19,6 +22,36 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SimTeam">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="homeTeam" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="passing" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recovery" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shooting" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goalkeeping" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formation" lowerBound="1"
+        eType="#//Formation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" lowerBound="1" eType="#//Depth"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="passingStyle" lowerBound="1"
+        eType="#//PassingStyle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Formation">
+    <eLiterals name="F442"/>
+    <eLiterals name="F433" value="1"/>
+    <eLiterals name="F352" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Depth">
+    <eLiterals name="LOW"/>
+    <eLiterals name="MEDIUM" value="1"/>
+    <eLiterals name="HIGH" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PassingStyle">
+    <eLiterals name="ONE_TOUCH"/>
+    <eLiterals name="LONG_BALLS" value="1"/>
+    <eLiterals name="TARGET_MAN" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Agent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

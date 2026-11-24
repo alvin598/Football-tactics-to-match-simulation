@@ -79,8 +79,10 @@ def style_for_pass(team, zone):
 # =============================================================================
 
 class Team:
-    def __init__(self, name, passing, recovery, shooting, goalkeeping, formation, depth, style):
+    def __init__(self, name, passing, recovery, shooting, goalkeeping, formation, depth, style,
+                 home_team=False):
         self.name = name
+        self.home_team = home_team      # True -> gets HOME_ADVANTAGE
         self.passing = passing          # average passing of outfield players
         self.recovery = recovery        # average defending of outfield players
         self.shooting = shooting        # average shooting of attackers
@@ -96,9 +98,11 @@ class MatchSimulation:
         self.away = away
         self.ticks = ticks # number of pass attempts in a match
         self.rng = random.Random(seed)
+        if home.home_team and away.home_team:
+            raise ValueError("Only one team can have home_team=True")
 
     def home_bonus(self, team):
-        return HOME_ADVANTAGE if team is self.home else 0
+        return HOME_ADVANTAGE if team.home_team else 0
 
     def happens(self, probability):
         return self.rng.random() * 100 < clamp(probability)
@@ -238,11 +242,11 @@ def run_many(home, away, ticks, n):
 
 TICKS = 80
 
-HOME = Team("Vaxjo FC",
+HOME = Team("Vaxjo FC", home_team = True,
             passing=72.6, recovery=56.3, shooting=79.7, goalkeeping=78,
             formation=Formation.F433, depth=Depth.HIGH, style=PassingStyle.ONE_TOUCH)
 
-AWAY = Team("Kalmar AIK",
+AWAY = Team("Kalmar AIK", home_team = False,
             passing=63.8, recovery=61.8, shooting=77.5, goalkeeping=75,
             formation=Formation.F442, depth=Depth.LOW, style=PassingStyle.LONG_BALLS)
 
