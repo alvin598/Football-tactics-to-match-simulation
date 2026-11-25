@@ -6,7 +6,7 @@
     <semanticResources>Examplematch.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tyx_sNzuEfGk4LK2qllW5Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1795514982856">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1795610946781">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="footballMM.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -21,6 +21,10 @@
             <children xmi:type="notation:Node" xmi:id="_36cTwN0QEfGC1-a6hiTDag" type="3010" element="_36L1EN0QEfGC1-a6hiTDag">
               <styles xmi:type="notation:FontStyle" xmi:id="_36cTwd0QEfGC1-a6hiTDag" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_36cTwt0QEfGC1-a6hiTDag"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_kPj9oOjOEfG2iYq0bdzvUA" type="3010" element="_kFT1cOjOEfG2iYq0bdzvUA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_kPj9oejOEfG2iYq0bdzvUA" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_kPj9oujOEfG2iYq0bdzvUA"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_YWQ7Ut0QEfGC1-a6hiTDag"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_YWQ7U90QEfGC1-a6hiTDag"/>
@@ -282,7 +286,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_YWCR0N0QEfGC1-a6hiTDag" name="Team" tooltipText="" outgoingEdges="_qLK1cN0SEfGC1-a6hiTDag _ufQg1t0SEfGC1-a6hiTDag" incomingEdges="_GRWpid3CEfGC1-a6hiTDag" width="12" height="10">
       <target xmi:type="ecore:EClass" href="footballMM.ecore#//Team"/>
       <semanticElements xmi:type="ecore:EClass" href="footballMM.ecore#//Team"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_a8XwAd0SEfGC1-a6hiTDag" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_l8pKgejOEfG2iYq0bdzvUA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -290,6 +294,14 @@
         <target xmi:type="ecore:EAttribute" href="footballMM.ecore#//Team/name"/>
         <semanticElements xmi:type="ecore:EAttribute" href="footballMM.ecore#//Team/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_--as0d0QEfGC1-a6hiTDag" labelAlignment="LEFT" description="_--aFxd0QEfGC1-a6hiTDag">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_kFT1cOjOEfG2iYq0bdzvUA" name="homeTeam : EBoolean = false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="footballMM.ecore#//Team/homeTeam"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="footballMM.ecore#//Team/homeTeam"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_meCAUujOEfG2iYq0bdzvUA" labelAlignment="LEFT" description="_--aFxd0QEfGC1-a6hiTDag">
           <labelFormat>bold</labelFormat>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

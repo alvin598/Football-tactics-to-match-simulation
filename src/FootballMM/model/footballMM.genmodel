@@ -29,6 +29,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Team/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference footballMM.ecore#//Team/player"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference footballMM.ecore#//Team/tactics"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Team/homeTeam"/>
     </genClasses>
     <genClasses ecoreClass="footballMM.ecore#//Player">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Player/id"/>
