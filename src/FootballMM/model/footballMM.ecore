@@ -56,7 +56,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="PassingStyle">
     <eLiterals name="Longballs"/>
     <eLiterals name="One_touch" value="1" literal="One_Touch"/>
-    <eLiterals name="Target man" value="2" literal="Target_Man"/>
+    <eLiterals name="Target_man" value="2" literal="Target_Man"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Match">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

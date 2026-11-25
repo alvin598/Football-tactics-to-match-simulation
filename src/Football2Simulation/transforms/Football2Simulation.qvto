@@ -1,0 +1,98 @@
+modeltype FOOTBALL uses "http://lnu.se/4dt903/football";
+modeltype SIM uses "http://lnu.se/4dt903/simulation";
+
+-- FootballMM (players + tactics) -> SimulationMM (aggregated team stats)
+transformation Football2Simulation(in srcModel:FOOTBALL, out destModel:SIM);
+
+-- Parameter: how many times each match is simulated.
+-- Set it in Run Configurations -> Configuration tab; 1000 is used if it is left empty.
+configuration property numOfRuns : Integer;
+
+main() {
+	-- every Match in the input model, not only root objects
+	srcModel.objectsOfType(FOOTBALL::Match)->map toSimulation();
+}
+
+-- Match -> Simulation
+mapping FOOTBALL::Match::toSimulation() : SIM::Simulation {
+	matchId := self.id;
+	ticks := 1000;          -- pass attempts per match
+	numOfRuns := runs();
+	team := self.team->map toSimTeam();
+}
+
+-- numOfRuns parameter, or 1000 when it is not set
+query runs() : Integer {
+	return if numOfRuns.oclIsUndefined() then 1000 else numOfRuns endif;
+}
+
+-- Team -> SimTeam (team stats from rule-definitions.md)
+mapping FOOTBALL::Team::toSimTeam() : SIM::SimTeam {
+	name := self.name;
+	homeTeam := self.homeTeam;
+
+	passing := self.avgPassing();
+	recovery := self.avgDefending();
+	shooting := self.avgShooting();
+	goalkeeping := self.goalkeeperRating();
+
+	formation := self.tactics.formation.toSimFormation();
+	depth := self.tactics.depth.toSimDepth();
+	passingStyle := self.tactics.passingStyle.toSimPassingStyle();
+}
+
+-- ---------------------------------------------------------------------------
+-- Team stats
+-- ---------------------------------------------------------------------------
+
+-- Passing = average passing of all outfield players
+query FOOTBALL::Team::avgPassing() : Real {
+	var outfield := self.player[FOOTBALL::OutfieldPlayer];
+	return outfield->collect(p | p.passing)->sum() / outfield->size();
+}
+
+-- Recovery = average defending of all outfield players
+query FOOTBALL::Team::avgDefending() : Real {
+	var outfield := self.player[FOOTBALL::OutfieldPlayer];
+	return outfield->collect(p | p.defending)->sum() / outfield->size();
+}
+
+-- Shooting = average shooting of attacking players
+-- (falls back to all outfield players if the team has no attackers)
+query FOOTBALL::Team::avgShooting() : Real {
+	var outfield := self.player[FOOTBALL::OutfieldPlayer];
+	var attackers := outfield->select(p | p.position = FOOTBALL::Position::Attacker);
+	if (attackers->isEmpty()) then {
+		attackers := outfield;
+	} endif;
+	return attackers->collect(p | p.shooting)->sum() / attackers->size();
+}
+
+-- Goalkeeping = the goalkeeper's goalkeeping rating
+query FOOTBALL::Team::goalkeeperRating() : Integer {
+	return self.player[FOOTBALL::GoalKeeper]->any(true).goalkeeping;
+}
+
+-- ---------------------------------------------------------------------------
+-- Tactics: FootballMM types -> SimulationMM enums
+-- ---------------------------------------------------------------------------
+
+query FOOTBALL::Formation::toSimFormation() : SIM::Formation {
+	return if self = FOOTBALL::Formation::F433 then SIM::Formation::F433
+		else if self = FOOTBALL::Formation::F352 then SIM::Formation::F352
+		else SIM::Formation::F442 endif endif;
+}
+
+-- depth is an Integer in FootballMM: 1 = LOW, 2 = MEDIUM, 3 = HIGH
+query Integer::toSimDepth() : SIM::Depth {
+	return if self <= 1 then SIM::Depth::LOW
+		else if self = 2 then SIM::Depth::MEDIUM
+		else SIM::Depth::HIGH endif endif;
+}
+
+-- FootballMM's "Target man" literal contains a space, so it is handled by the else branch
+query FOOTBALL::PassingStyle::toSimPassingStyle() : SIM::PassingStyle {
+	return if self = FOOTBALL::PassingStyle::Longballs then SIM::PassingStyle::LONG_BALLS
+		else if self = FOOTBALL::PassingStyle::One_touch then SIM::PassingStyle::ONE_TOUCH
+		else SIM::PassingStyle::TARGET_MAN endif endif;
+}

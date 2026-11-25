@@ -4,9 +4,10 @@
     <semanticResources>footballMM.ecore</semanticResources>
     <semanticResources>footballMM.genmodel</semanticResources>
     <semanticResources>Examplematch.xmi</semanticResources>
+    <semanticResources>vaxjokalmar.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_tyx_sNzuEfGk4LK2qllW5Q">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1795610946781">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_t0qPANzuEfGk4LK2qllW5Q" name="footballMM" repPath="#_t0Cj8NzuEfGk4LK2qllW5Q" changeId="1795616294700">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="footballMM.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -473,9 +474,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_wqz-4N3BEfGC1-a6hiTDag" name="Target man" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/Target%20man"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/Target%20man"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_wqz-4N3BEfGC1-a6hiTDag" name="Target_man" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/Target_man"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="footballMM.ecore#//PassingStyle/Target_man"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_wqz-4d3BEfGC1-a6hiTDag" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>

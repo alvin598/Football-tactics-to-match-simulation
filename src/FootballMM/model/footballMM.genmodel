@@ -23,7 +23,7 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="footballMM.ecore#//PassingStyle">
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Longballs"/>
       <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/One_touch"/>
-      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Target%20man"/>
+      <genEnumLiterals ecoreEnumLiteral="footballMM.ecore#//PassingStyle/Target_man"/>
     </genEnums>
     <genClasses ecoreClass="footballMM.ecore#//Team">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute footballMM.ecore#//Team/name"/>

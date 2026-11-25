@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://lnu.se/4dt903/football" targetURI="platform:/resource/FootballMM/model/footballMM.ecore"/>
+  <mapping sourceURI="http://lnu.se/4dt903/simulation" targetURI="platform:/resource/SimulationMM/model/simulationMM.ecore"/>
+</uriMap:MappingContainer>

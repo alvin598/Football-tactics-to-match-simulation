@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulationMM:Simulation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simulationMM="http://lnu.se/4dt903/simulation" xsi:schemaLocation="http://lnu.se/4dt903/simulation ../model/simulationMM.ecore" matchId="1" ticks="1000" numOfRuns="67">
+  <team name="Växjö FC" homeTeam="true" passing="68.7" recovery="61.7" shooting="80.66666666666667" goalkeeping="69" formation="F433" depth="HIGH" passingStyle="LONG_BALLS"/>
+  <team name="Kalmar aik" passing="64.5" recovery="62.3" shooting="78.66666666666667" goalkeeping="65" formation="F433" passingStyle="LONG_BALLS"/>
+</simulationMM:Simulation>
