@@ -241,6 +241,7 @@ def run_many(home, away, ticks, n):
 # =============================================================================
 
 TICKS = 80
+RUNS = 1000
 
 HOME = Team("Vaxjo FC", home_team = True,
             passing=72.6, recovery=56.3, shooting=79.7, goalkeeping=78,
@@ -271,4 +272,4 @@ if __name__ == "__main__":
     print(f"{'Shots':<20}{h['shots']:>12}{a['shots']:>12}")
     print(f"{'Total events':<20}{len(events):>24}")
 
-    run_many(HOME, AWAY, TICKS, 1000)
+    run_many(HOME, AWAY, TICKS, RUNS)
