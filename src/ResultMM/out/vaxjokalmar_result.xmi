@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resultMM:Match xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:resultMM="http://lnu.se/4dt903/result" xsi:schemaLocation="http://lnu.se/4dt903/result ../model/resultMM.ecore" matchId="1" numOfRuns="1000" homeWinRate="0.447" drawRate="0.314" awayWinRate="0.239" avgGoals="1.78" avgShots="11.24" shotConversion="0.158" avgPasses="1002" passCompletion="0.782">
+  <home teamName="Växjö FC" avgGoals="1.02" possession="0.53"/>
+  <away teamName="Kalmar aik" avgGoals="0.76" possession="0.47"/>
+  <mostCommonScore homeGoals="1" awayGoals="0" frequency="0.188"/>
+</resultMM:Match>
