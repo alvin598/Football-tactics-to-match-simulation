@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/SimulationMM/src" modelPluginID="SimulationMM"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/SimulationMM/src" modelPluginID="SimulationMM"
     modelName="SimulationMM" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="25.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>simulationMM.ecore</foreignModel>
   <genPackages prefix="SimulationMM" disposableProviderFactory="true" ecorePackage="simulationMM.ecore#/">
-    <genClasses ecoreClass="simulationMM.ecore#//NewEClass1"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="simulationMM.ecore#//Formation">
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//Formation/F442"/>
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//Formation/F433"/>
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//Formation/F352"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="simulationMM.ecore#//Depth">
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//Depth/LOW"/>
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//Depth/MEDIUM"/>
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//Depth/HIGH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="simulationMM.ecore#//PassingStyle">
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//PassingStyle/ONE_TOUCH"/>
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//PassingStyle/LONG_BALLS"/>
+      <genEnumLiterals ecoreEnumLiteral="simulationMM.ecore#//PassingStyle/TARGET_MAN"/>
+    </genEnums>
+    <genClasses ecoreClass="simulationMM.ecore#//Simulation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//Simulation/matchId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//Simulation/ticks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simulationMM.ecore#//Simulation/team"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//Simulation/numOfRuns"/>
+    </genClasses>
+    <genClasses ecoreClass="simulationMM.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//Rule/probability"/>
+    </genClasses>
+    <genClasses ecoreClass="simulationMM.ecore#//SimTeam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/homeTeam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/passing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/recovery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/shooting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/goalkeeping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/formation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute simulationMM.ecore#//SimTeam/passingStyle"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

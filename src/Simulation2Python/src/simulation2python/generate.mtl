@@ -1,0 +1,7 @@
+[module generate('http://lnu.se/4dt903/simulation')/]
+
+[comment @main /]
+[template public generateSimulation(aSimulation : simulationMM::Simulation)]
+  [file ('match_' + aSimulation.matchId.toString() + '.py', 'overwrite', 'UTF-8')]
+  [/file]
+[/template]

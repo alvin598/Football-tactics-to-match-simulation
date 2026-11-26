@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Simulation2Python
+Bundle-SymbolicName: Simulation2Python
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.emf.ecore,
+ SimulationMM
+Automatic-Module-Name: Simulation2Python
+Bundle-RequiredExecutionEnvironment: JavaSE-25
